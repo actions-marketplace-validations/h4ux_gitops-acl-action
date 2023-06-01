@@ -6,7 +6,13 @@ inputs:
     required: true
   api-key:
     description: "Tailscale API key"
-    required: true
+    required: false
+  oauth-id:
+    description: "tailscale OAuth ID"
+    required: false
+  oauth-secret:
+    description: "tailscale OAuth Secret"
+    required: false
   policy-file:
     description: "Path to policy file"
     required: true
@@ -19,6 +25,8 @@ runs:
   image: "Dockerfile"
   env:
     TS_API_KEY: "${{ inputs.api-key }}"
+    TS_OAUTH_ID: "${{ inputs.oauth-id }}"
+    TS_OAUTH_SECRET: "${{ inputs.oauth-secret }}"
     TS_TAILNET: "${{ inputs.tailnet }}"
   args:
     - "--policy-file=${{ inputs.policy-file }}"
