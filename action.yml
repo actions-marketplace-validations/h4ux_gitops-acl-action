@@ -1,4 +1,4 @@
-name: "Sync Tailscale ACLs"
+name: "Sync Tailscale ACLs - Oauth"
 description: "Push changes to Tailscale and run ACL tests in CI"
 inputs:
   tailnet:
